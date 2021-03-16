@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>All About Rei</title>
+<script>
+function isPrime(x) {
+	var prime = true;
+
+	for(var i = 2; i <= Math.sqrt(x); i++) {
+		if (x % i == 0) {
+			prime = false;
+			break;
+		}
+		
+		else {
+			continue;
+		}
+	}
+
+	return prime;
+}
+
+function greatestPrime() {
+	var t0 = performance.now();
+	var x = 1000000000;
+	for (var i = x; i >= 1; i--) {
+		if (isPrime(i)) {
+			var t1 = performance.now()
+
+			alert(i + "\nCall took " + (t1 - t0) + " milliseconds");
+			break;
+		}
+
+		else {
+			continue;
+		}
+	}
+}
+
+function getFrequency(string) {
+    var freq = {};
+    for (var i = 0; i < string.length; i++) {
+        var character = string.charAt(i);
+        if (freq[character]) {
+           freq[character]++;
+        } else {
+           freq[character] = 1;
+        }
+    }
+
+    return freq;
+}
+</script>
+</head>
+<body>
+<h1>Hello World! This is Rei's first webpage!</h1>
+<button onclick="greatestPrime()">Check Prime</button>
+<br>
+<script>
+	document.writeln(getFrequency("dajfkdajflkjdfkjkjdeiurcana"));
+</script>
+</body>
+</html>
